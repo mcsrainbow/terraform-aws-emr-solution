@@ -5,7 +5,7 @@ A better Terraform solution to create an AWS EMR cluster, including:
 - S3(Cluster Logs and Zeppelin Notebook)
 - RDS(External Hive Metastore Database)
 - IAM(Roles with AWS Managed Policies)
-- EMR(Fully Functional Cluster with Autoscaling Enabled)
+- EMR(Autoscaling Enabled)
 
 ## Structure
 
