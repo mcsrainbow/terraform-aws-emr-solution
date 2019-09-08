@@ -93,7 +93,7 @@ module "rds_mysql_hive_metastore" {
   ]
 
   tags = {
-    Owner       = "emr-cluster"
+    Owner       = "${var.cluster_name}"
     Environment = "${var.environment}"
   }
 }
@@ -104,13 +104,13 @@ module "rds_mysql_hive_metastore" {
 module "s3_bucket_emr_cluster" {
   source = "./modules/terraform-aws-s3-bucket"
 
-  bucket = "feisila-s3-bucket-emr-cluster"
+  bucket = "your-prefix-s3-bucket-emr-cluster"
   acl    = "private"
 
   force_destroy = true
 
   tags = {
-    Owner = "emr-cluster"
+    Owner = "${var.cluster_name}"
   }
 
   versioning = {
@@ -181,7 +181,7 @@ resource "aws_security_group" "emr_cluster_slave" {
 module "emr_cluster" {
   source = "./modules/terraform-aws-emr-cluster"
 
-  cluster_name  = "emr-cluster"
+  cluster_name  = "${var.cluster_name}"
   release_label = "emr-5.26.0"
   applications  = ["Hadoop", "Hive", "Spark", "Zeppelin"]
   subnet_id     = "${data.aws_subnet_ids.default.ids[0]}"
@@ -223,7 +223,7 @@ module "emr_cluster" {
   # bootstrap_action_args = ["instance.isMaster=true", "echo running on master node"]
 
   tags = {
-    Name        = "emr-cluster"
+    Name        = "${var.cluster_name}"
     Environment = "${var.environment}"
   }
 }
