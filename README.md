@@ -1,6 +1,11 @@
 # terraform-aws-emr-solution
 
-A better Terraform solution to create an AWS EMR cluster
+A better Terraform solution to create an AWS EMR cluster, including:
+- KMS(Server Side Encryption for S3 and RDS)
+- S3(Cluster Logs and Zeppelin Notebook)
+- RDS(External Hive Metastore Database)
+- IAM(Roles with AWS Managed Policies)
+- EMR(Fully Functional Cluster with Autoscaling Enabled)
 
 ## Structure
 
