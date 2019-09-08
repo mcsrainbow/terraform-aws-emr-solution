@@ -100,7 +100,7 @@ module "emr_cluster" {
 - `rds_mysql_hive_metastore_db_instance_name` - "The database name"
 - `s3_bucket_emr_cluster_id` - "The name of the bucket"
 - `s3_bucket_emr_cluster_arn` - "The ARN of the bucket. Will be of format arn:aws:s3:::bucketname"
-- `s3_bucket_emr_cluster_domain_name` - "The bucket domain name. Will be of format bucketname.s3.amazonaws.com"
+- `s3_bucket_emr_cluster_domain_name` - "The bucket domain name as bucketname.s3.amazonaws.com"
 - `s3_bucket_emr_cluster_region` - "The AWS region this bucket resides in."
 - `s3_bucket_emr_cluster_tags` - "List of tags"
 - `emr_cluster_master_id` - "Instance ID of master node"
