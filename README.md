@@ -47,7 +47,7 @@ A better Terraform solution to create an AWS EMR cluster
 module "emr_cluster" {
   source = "./modules/terraform-aws-emr-cluster"
 
-  cluster_name  = "emr-cluster"
+  cluster_name  = "${var.cluster_name}"
   release_label = "emr-5.26.0"
   applications  = ["Hadoop", "Hive", "Spark", "Zeppelin"]
   subnet_id     = "${data.aws_subnet_ids.default.ids[0]}"
@@ -84,7 +84,7 @@ module "emr_cluster" {
   hive_metastore_pass    = "hive_dbpass"
 
   tags = {
-    Name        = "emr-cluster"
+    Name        = "${var.cluster_name}"
     Environment = "${var.environment}"
   }
 }
