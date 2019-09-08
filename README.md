@@ -50,7 +50,7 @@ module "emr_cluster" {
   cluster_name  = "${var.cluster_name}"
   release_label = "emr-5.26.0"
   applications  = ["Hadoop", "Hive", "Spark", "Zeppelin"]
-  subnet_id     = "${tolist(data.aws_subnet_ids.default.ids)[0]}"
+  subnet_id     = tolist(data.aws_subnet_ids.default.ids)[0]
   key_name      = "aws-use-keypair"
 
   master_instance_type    = "m5.xlarge"
