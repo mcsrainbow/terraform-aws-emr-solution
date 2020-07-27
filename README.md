@@ -1,4 +1,4 @@
-# terraform-aws-emr-solution
+## terraform-aws-emr-solution
 
 A better Terraform solution to create an AWS EMR cluster, including:
 - KMS(Server Side Encryption for S3 and RDS)
@@ -7,7 +7,7 @@ A better Terraform solution to create an AWS EMR cluster, including:
 - IAM(Roles with AWS Managed Policies)
 - EMR(Autoscaling Enabled)
 
-## Structure
+### Structure
 
 ```
 .
@@ -43,7 +43,7 @@ A better Terraform solution to create an AWS EMR cluster, including:
 └── variables.tf
 ```
 
-## Usage
+### Usage
 
 ```hcl
 ...
@@ -95,7 +95,7 @@ module "emr_cluster" {
 }
 ```
 
-## Outputs
+### Outputs
 
 - `rds_mysql_hive_metastore_db_instance_address` - "The address of the RDS instance"
 - `rds_mysql_hive_metastore_db_instance_arn` - "The ARN of the RDS instance"
